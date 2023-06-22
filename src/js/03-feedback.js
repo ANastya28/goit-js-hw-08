@@ -35,7 +35,7 @@ function onTextareaInput(event) {
 function onFormSubmit(event) {
     event.preventDefault();
 
-    const { elements: { email, message } } = event.target;
+    const { elements: { email, message } } = event.currentTarget;
     
     if (email.value === "" || message.value === "" ) {
         return alert ("Enter your email and password");
