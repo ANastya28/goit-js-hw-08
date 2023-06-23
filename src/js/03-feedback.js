@@ -52,7 +52,7 @@ function getDataFromStorage() {
 
     if (savedData) {
         refs.input.value = savedData.email || "";
-        refs.form.value = savedData.message || "";
+        refs.textarea.value = savedData.message || "";
     }
 }
 
