@@ -8,7 +8,7 @@ const refs = {
 // console.log(refs.input);
 // console.log(refs.textarea);
 const STORAGE_KEY = "feedback-form-state";
-const formData = {};
+let formData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
 
 refs.form.addEventListener('submit', throttle(onFormSubmit, 500));
 refs.form.addEventListener('input', onTextareaInput);
@@ -45,6 +45,7 @@ function onFormSubmit(event) {
     
     event.currentTarget.reset();
     localStorage.removeItem(STORAGE_KEY);
+    formData = {};
 };
 
 function getDataFromStorage() {
