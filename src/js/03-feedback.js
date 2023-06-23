@@ -51,7 +51,10 @@ function getDataFromStorage() {
     const savedData = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
     if (savedData) {
-        emailInput.value = savedData.email;
-        textInput.value = savedData.message;
+        refs.input.value = savedData.email || "";
+        refs.form.value = savedData.message || "";
     }
 }
+
+getDataFromStorage();
+
